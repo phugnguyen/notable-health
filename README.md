@@ -2,7 +2,7 @@
 
 ## Development
 
-### Installing Dependencies
+### Installation
 
 ```sh
 npm install
