@@ -93,7 +93,7 @@ const appointmentList = {
       },
       {
         number: 5,
-        name: "Len Drexler",
+        name: "Mike Hess",
         time: "10:00AM",
         kind: "New Patient"
       }
