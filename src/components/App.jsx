@@ -1,30 +1,46 @@
 import React from "react";
-import PhysicianList from "./PhysicianListComponent";
-import AppointmentList from "./AppointmentListComponent";
+import PhysicianList from "./PhysicianListComponent.jsx";
+import AppointmentList from "./AppointmentListComponent.jsx";
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        physicians = [],
+      physicians: [],
+      appointments: null
     };
+
+    this.fetchAppointments = this.fetchAppointments.bind(this);
   }
 
   componentDidMount() {
-      fetch("/api/physicians")
+    fetch("/api/physicians")
       .then(physicians => physicians.json())
-      .then(physicians => (
-          this.setState({ physicians: physicians})
-      ).catch( err => console.log(err));
+      .then(physicians => {
+        this.setState({ physicians });
+      })
+      .catch(err => console.log(err));
   }
 
-  
+  fetchAppointments(e) {
+    fetch(`/api/appointments/${e.target.innerHTML}`)
+      .then(appointments => appointments.json())
+      .then(appointments => this.setState({ appointments }))
+      .catch(err => console.log(err));
+  }
 
   render() {
+    const { physicians, appointments } = this.state;
     return (
-      <div className="calendar-body">
-        <h1>Welcome to React app</h1>
+      <div className="schedule-body">
+        <PhysicianList
+          physicians={physicians}
+          fetchAppointments={this.fetchAppointments}
+        />
+        <AppointmentList appointments={appointments} />
       </div>
     );
   }
 }
+
+export default App;

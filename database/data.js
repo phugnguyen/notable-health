@@ -1,4 +1,4 @@
-const physicians = ["Hibbert, Julius", "Krieger, Algemop", "Riviera, Nick"];
+const physicians = ["Hibbert, Julius", "Krieger, Algernop", "Riviera, Nick"];
 const appointmentList = {
   "Hibbert, Julius": {
     email: "jhibbert@notablehealth.com",

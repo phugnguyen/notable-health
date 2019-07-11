@@ -5,6 +5,7 @@ const port = 3000;
 const { getPhysicians, getAppointments } = require("../database/index");
 
 app.use(express.static("public"));
+app.use(express.json());
 
 app.get("/api/physicians", (req, res) => {
   getPhysicians((err, physicians) => {
