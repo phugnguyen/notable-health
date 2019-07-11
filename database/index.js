@@ -1,4 +1,4 @@
-const { physicians, appointmentList } = require("./data.js");
+const { physicians, appointmentList } = require("./data");
 
 const getPhysicians = cb => {
   cb(null, physicians);
