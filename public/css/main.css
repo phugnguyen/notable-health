@@ -1,0 +1,7 @@
+@import url("appointmentList.css");
+@import url("physicianList.css");
+
+.schedule-body {
+  display: flex;
+  flex-direction: row;
+}

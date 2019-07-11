@@ -2,7 +2,7 @@ import React from "react";
 
 const AppointmentList = ({ appointments }) => {
   if (!appointments) {
-    return null;
+    return <div className="appointment-list-container" />;
   } else {
     const rows = appointments.patients.map(patient => {
       return (
