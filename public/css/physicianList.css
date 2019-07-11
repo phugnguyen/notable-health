@@ -1,3 +1,6 @@
 .physician-list-container {
   width: 33%;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
 }

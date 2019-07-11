@@ -7,10 +7,10 @@ const PhysicianList = ({ physicians, fetchAppointments }) => {
 
   return (
     <div className="physician-list-container">
-      <div>Notable</div>
+      <div className="">Notable</div>
       <div>PHYSICIANS</div>
       <div>{physicianNames}</div>
-      <div className="logout-btn">Logout</div>
+      <button>Logout</button>
     </div>
   );
 };
